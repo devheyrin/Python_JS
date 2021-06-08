@@ -24,4 +24,7 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('js01', TemplateView.as_view(template_name='js01.html'), name='home'),
     path('js02', TemplateView.as_view(template_name='js02.html'), name='home'),
+path('js03', TemplateView.as_view(template_name='js03.html'), name='home'),
+path('js04', TemplateView.as_view(template_name='js04.html'), name='home'),
+path('js05', TemplateView.as_view(template_name='js05.html'), name='home'),
 ]
