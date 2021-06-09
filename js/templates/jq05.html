@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-1.7.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#register_form > a').click(function(){
+                id = $('input[name="id"]').val();
+                pwd = $('input[name="pwd"]').val();
+                name = $('input[name="name"]').val();
+                if(id == '' || id == null){
+                    $('#id_span').text('ID is Mandatory');
+                    $('input[name="id"]').focus();
+                    return;
+                };
+                if(pwd == '' || pwd == null){
+                    $('#pwd_span').text('PWD is Mandatory');
+                    $('input[name="pwd"]').focus();
+                    return;
+                };
+                if(name == '' || name == null){
+                    $('#name_span').text('NAME is Mandatory');
+                    $('input[name="name"]').focus();
+                    return;
+                };
+                c = confirm('Register?');
+                if(c == true){
+                    $('#register_form').attr('action', 'registerimpl');
+                    $('#register_form').attr('method', 'get');
+                    $('#register_form').submit();
+                }else{
+                //입력한 정보 초기화
+                    $('input[name="id"]').val('');
+                    $('input[name="pwd"]').val('');
+                    $('input[name="name"]').val('');
+                };
+            });
+        });
+
+
+    </script>
+
+</head>
+<body>
+
+  <form id="register_form">
+    ID<input type="text" name="id"><span id = "id_span"></span><br>
+    PWD<input type="password" name="pwd"><span id = "pwd_span"></span><br>
+    NAME<input type="text" name="name"><span id = "name_span"></span><br>
+
+    <a href="#">REGISTER</a>
+  </form>
+{{name}}님 환영합니다
+
+</body>
+</html>

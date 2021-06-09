@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-1.7.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('button').hover(function(){
+          $(this).css('color', 'red');
+        },function(){
+          $(this).css('color', 'black');
+        });//end button hover event
+
+        $('input').focus(function(){
+          $(this).css('background', 'gray');
+        }); // end focus event
+
+        $('input').blur(function(){
+          $(this).css('background', 'white');
+        }); // end
+
+        $('button').eq(0).click(function(){
+          str = $('input[name="id"]').val();
+          alert(str);
+        }); // end
+
+        $('button').eq(1).click(function(){
+         $('input[name="id"]').val('input VALUE');
+
+        }); // end
+
+        $('button').eq(2).click(function(){
+            $('form').slideDown();
+        }); // end
+
+        $('button').eq(2).click(function(){
+            $('form').slideUp();
+
+        }); // end
+
+      });
+
+
+    </script>
+</head>
+<body>
+    <button>Button1</button>
+    <button>Button2</button>
+    <button>Button3</button><br>
+    <form>
+        ID<input type="text" name="id"><br>
+        PWD<input type="password" name="pwd"><br>
+    </form>
+
+</body>
+</html>
