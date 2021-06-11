@@ -31,11 +31,12 @@ class Tempa:
         #     tempa.append(0);
         for row in data:
             if year == int(row[0].split('-')[0]) and month == int(row[0].split('-')[1]):
-                ltemp.append(row[3]);
-                htemp.append(row[4]);
-        result = [{'low':ltemp},{'high':htemp}];
-        #print('low: ',ltemp);
-        #print('high: ',htemp);
+                print(type(float(row[3])))
+                ltemp.append(float(row[3]));
+                htemp.append(float(row[4]));
+        result = [{"name":"low", "data":ltemp},{"name":"high", "data":htemp}];
+        print('low: ',ltemp);
+        print('high: ',htemp);
         return result;
 
 
